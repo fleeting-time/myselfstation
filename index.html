@@ -1,72 +1,279 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-    <link href="css/base.css" rel="stylesheet">
-    <link href="css/index.css"rel="stylesheet">
-    <script src="js/jquery-1.7.2.js" type="text/javascript"></script>
-    <script src="js/jquery.easing.1.3.js" type="text/javascript"></script>
-    <script src="js/index.js" type="text/javascript"></script>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>小小个人站</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link rel="stylesheet" type="text/css" href="css/base.css">
+<link rel="stylesheet" type="text/css" href="css/animate.css">
+<link rel="stylesheet" type="text/css" href="css/index.css">
+<script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/sound.js"></script>
 </head>
 <body>
-    <!--头部 begin-->
-    <div class="head_box clearFix">
-        <div id="navbox" class="nav_position">
-            <div class="navbigbox"></div>
-            <div class="nav_menu clearFix">
-                <div class="logo_box">
-                    <ul>
-                        <li id="lone" class="leftone"></li>
-                        <li id="ltwo" class="lefttwo"></li>
-                        <li id="lthree" class="leftthree"></li>
-                         <li id="lfour" class="leftfour"></li>
-                        <li id="rone" class="rightone"></li>
-                        <li id="rtwo" class="rightwo"></li>
-                    </ul>
+    <!--star head-->
+    <header>
+        <div class="to-top">
+            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+             width="50px" height="50px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+            <g>
+                <path d="M5.022,7.817l2.996-2.651l2.996,2.651c0.196,0.196,0.516,0.196,0.711,0c0.198-0.196,0.198-0.514,0.002-0.711L8.381,4.147
+                    c-0.1-0.1-0.231-0.148-0.362-0.146C7.887,3.999,7.756,4.047,7.656,4.147L4.311,7.106c-0.196,0.196-0.196,0.515,0,0.711
+                    C4.507,8.013,4.826,8.013,5.022,7.817z"/>
+                <path d="M8.381,7.733c-0.1-0.1-0.231-0.148-0.362-0.146C7.887,7.585,7.756,7.633,7.656,7.733l-3.345,2.958
+                    c-0.196,0.197-0.196,0.516,0,0.711c0.196,0.197,0.515,0.197,0.711,0l2.996-2.649l2.996,2.649c0.196,0.197,0.516,0.197,0.711,0
+                    c0.196-0.195,0.196-0.514,0-0.711L8.381,7.733z"/>
+            </g>
+        </svg>
+        <p>top</p>
+        </div>
+        <div id="headerBox" class="header-box">
+            <nav class="header-navbox">
+                <ul class="header-menu clearfix">
+                    <li>
+                        <a href="javascript:;">
+                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            width="40px" height="40px" viewBox="0 0 14 12" enable-background="new 0 0 14 12" xml:space="preserve">
+                                <g>
+                            <path d="M12.993,0H1.007C0.451,0,0,0.446,0,0.997v7.006C0,8.555,0.45,9,1.007,9h11.986C13.549,9,14,8.555,14,8.003V0.997
+                                C14,0.446,13.55,0,12.993,0z M13,8H1V1h12V8z"/>
+                            <path d="M8,11H6v-1H0v1c0,0.553,0.447,1,1,1h12c0.553,0,1-0.447,1-1v-1H8V11z"/>
+                            </g>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><svg version="1.1" width="40px" height="40px" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"     x=              "0px" y="0px"
+                                viewBox="0 0 13 22.034" style="enable-background:new 0 0 13 22.034;" xml:space="preserve">
+                                <g>
+                                <path style="fill-rule:evenodd;clip-rule:evenodd;" d="M11,22.034c0,0,2,0,2-2.003V2.003C13,0,11,0,11,0H2c0,0-2,0-2,2.003v18.028
+                                    c0,2.003,2,2.003,2,2.003H11z M6.5,21.2c-0.552,0-1-0.448-1-1c0-0.552,0.448-1,1-1c0.552,0,1,0.448,1,1
+                                    C7.5,20.752,7.052,21.2,6.5,21.2z M4,1.221C4,1.097,4.099,1,4.221,1h4.557C8.9,1,9,1.099,9,1.221V1.28
+                                    c0,0.125-0.099,0.221-0.221,0.221H4.221C4.1,1.501,4,1.402,4,1.28V1.221z M1,2.5h11v16H1V2.5z"/>
+                                </g>
+                                </svg>
+                                </a>
+                        </li>
+                    <li>
+                        <a href="javascript:;">
+                        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                 width="40px" height="40px" viewBox="0 0 20.019 27.363" style="enable-background:new 0 0 20.019 27.363;"
+                                 xml:space="preserve">
+                            <g>
+                                <path style="fill:#000;" d="M10.009,18.245c2.753,0,4.985-2.23,4.985-4.983c0-2.754-2.232-4.985-4.985-4.985
+                                    s-4.985,2.231-4.985,4.985C5.023,16.015,7.256,18.245,10.009,18.245z M8.714,10.61c0-0.129,0.09-0.245,0.228-0.295
+                                    c0.138-0.047,0.297-0.021,0.401,0.07l3.072,2.651c0.144,0.125,0.144,0.326,0,0.45l-3.072,2.651
+                                    c-0.104,0.091-0.264,0.115-0.401,0.068c-0.136-0.049-0.226-0.166-0.228-0.294V10.61z"/>
+                                <path style="fill:#000;" d="M18.163,0H1.856C0.828,0,0,0.832,0,1.857v23.649c0,1.025,0.828,1.856,1.856,1.856h16.307
+                                    c1.025,0,1.855-0.831,1.855-1.856V1.857C20.019,0.832,19.188,0,18.163,0z M10.009,26.67c-0.609,0-1.104-0.495-1.104-1.104
+                                    c0-0.608,0.494-1.103,1.104-1.103c0.611,0,1.104,0.494,1.104,1.103C11.113,26.175,10.62,26.67,10.009,26.67z M18.142,23.495H1.879
+                                    V2.234h16.263V23.495z"/>
+                            </g>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <svg version="1.1" id="Layer_1_copy_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                                 y="0px" width="40px" height="40px" viewBox="0 0 126 126" enable-background="new 0 0 126 126" xml:space="preserve">
+                            <path stroke="#6D6E70" stroke-width="0" stroke-linecap="round" stroke-linejoin="round" d="M43.269,54.335h-3.552
+                                c-0.313,0-0.604-0.18-0.738-0.459c-0.055-0.113-0.082-0.237-0.082-0.359c0-0.183,0.062-0.363,0.175-0.506l7.695-9.755
+                                c0.158-0.197,0.392-0.308,0.645-0.308s0.486,0.111,0.641,0.304l7.697,9.757c0.189,0.237,0.229,0.58,0.1,0.859
+                                c-0.146,0.293-0.428,0.467-0.741,0.467h-3.554c-0.181,0-0.351-0.083-0.463-0.225l-3.68-4.664l-3.681,4.664
+                                C43.618,54.252,43.449,54.335,43.269,54.335z M87.868,53.009c0.189,0.237,0.229,0.58,0.1,0.859
+                                c-0.146,0.293-0.428,0.467-0.741,0.467h-3.554c-0.181,0-0.351-0.083-0.463-0.225l-3.68-4.664l-3.681,4.664
+                                c-0.112,0.141-0.281,0.225-0.462,0.225h-3.552c-0.313,0-0.604-0.18-0.738-0.459c-0.055-0.113-0.082-0.237-0.082-0.359
+                                c0-0.183,0.062-0.363,0.175-0.506l7.695-9.755c0.158-0.197,0.392-0.308,0.645-0.308s0.486,0.111,0.641,0.304L87.868,53.009z
+                                 M85.987,74.039c-3.843,8.887-12.843,14.629-22.928,14.629c-10.301,0-19.354-5.771-23.064-14.703
+                                c-0.636-1.53,0.089-3.286,1.62-3.921c0.376-0.156,0.766-0.23,1.149-0.23c1.176,0,2.292,0.696,2.771,1.85
+                                c2.776,6.685,9.655,11.004,17.523,11.004c7.69,0,14.528-4.322,17.421-11.011c0.658-1.521,2.424-2.222,3.944-1.563
+                                C85.945,70.752,86.645,72.518,85.987,74.039z M96.617,114.848H29.383c-10.053,0-18.23-8.178-18.23-18.23V29.382
+                                c0-10.052,8.178-18.23,18.23-18.23h67.234c10.053,0,18.23,8.178,18.23,18.23v67.235C114.848,106.67,106.67,114.848,96.617,114.848z
+                                 M29.383,19.731c-5.322,0-9.652,4.33-9.652,9.651v67.235c0,5.321,4.33,9.651,9.652,9.651h67.234c5.322,0,9.652-4.33,9.652-9.651
+                                V29.382c0-5.321-4.33-9.651-9.652-9.651H29.383z"/>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header-toggle clearfix">
+                <div>
+                    <section class="toggle-textbox">
+                        <h3>html/css</h3>
+                        <p>把工作当作事业干，才会对工作怀有敬仰之心、珍爱之情！</p>
+                        <a href="javascript:;">更多</a>
+                    </section>
                 </div>
-
-                <div class="nav_btnbox clearFix" id="nav_box">
-                    <div>
-                        <span class="html_icon"><img src="img/htmlcn.png"></span>
-                        <a href="javascript:;">HTML/CSS</a>
-                    </div>
-                    <div>
-                        <span class="js_icon"><img src="img/jscn.png"></span>
-                        <a href="javascript:;">JavaScript</a>
-                    </div>
-                    <div>
-                        <span class="hfive_icon"><img src="img/htnl5cn.png"></span>
-                        <a href="javascript:;">Html5</a>
-                    </div>
-                    <div>
-                        <span class="myself_icon"><img src="img/myselfcn.png"></span>
-                        <a href="javascript:;">About Me</a>
-                    </div>
+                <div>
+                    <section class="toggle-textbox">
+                        <h3>JavaScript</h3>
+                        <p>调整好心态，把自己摆正，从沉淀中成功！</p>
+                        <a href="javascript:;">更多</a>
+                    </section>
                 </div>
-                
+                <div>
+                    <section class="toggle-textbox">
+                        <h3>Html5/Css3</h3>
+                        <p>进步，意味着目标不断前移，阶段不断更新，它的视影不断变化。</p>
+                        <a href="javascript:;">更多</a>
+                    </section>
+                </div>
+                <div>
+                    <section class="toggle-textbox">
+                        <h3>AboutMe</h3>
+                        <p>人生在勤，不索何获。</p>
+                        <a href="javascript:;">更多</a>
+                    </section>
+                </div>
+                <ul class="toggle-btn">
+                    <li class="active"></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
             </div>
+             <a id="TleftBtn" class="tleft" href="javascript:;">
+               <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 width="40px" height="40px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+             <path d="M8.5,1C4.358,1,1,4.358,1,8.5C1,12.643,4.358,16,8.5,16c4.143,0,7.5-3.357,7.5-7.5C16,4.358,12.643,1,8.5,1z M10.1,11.391
+                c0.195,0.195,0.195,0.512,0,0.707s-0.512,0.195-0.707,0L6.15,8.855C6.052,8.757,6.004,8.629,6.004,8.5S6.052,8.243,6.15,8.145
+                l3.243-3.243c0.195-0.195,0.512-0.195,0.707,0c0.195,0.195,0.195,0.512,0,0.707L7.209,8.5L10.1,11.391z"/>
+            </svg>
+            </a>
+
+            <a id="TrightBtn" class="tright" href="javascript:;">
+                   <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                         width="40px" height="40px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                    <path d="M8.5,1C4.358,1,1,4.358,1,8.5C1,12.643,4.358,16,8.5,16c4.143,0,7.5-3.357,7.5-7.5C16,4.358,12.643,1,8.5,1z M10.85,8.855
+                        l-3.243,3.242c-0.195,0.195-0.512,0.195-0.707,0c-0.195-0.195-0.195-0.512,0-0.707L9.791,8.5L6.9,5.609
+                        c-0.195-0.195-0.195-0.512,0-0.707c0.195-0.195,0.512-0.195,0.707,0l3.243,3.243c0.099,0.098,0.147,0.227,0.146,0.355
+                        C10.996,8.629,10.948,8.757,10.85,8.855z"/>
+                    </svg>
+            </a> 
+            <span class="ser-downbox" id="mouse-serch">
+                <span class="sport-down" ></span>
+            </span>
         </div>
-        <div class="head_img clearFix">
-             <div class="text_box">
-                 <p class="welcon" id="we">Welcome to</p>
-                 <p class="website" id="ws">my website</p>
+    </header>
+    <!--end head-->
+    <!--begin myself-->
+    <div class="self-intbox">
+       <div class="self-int-photo"></div>
+        <div class="self-int-title">
+            <span>专业技能介绍</span>
+            <span class="mask">
+                滑动闪闪亮亮
+            </span>
+        </div>
+        <p class="self-int-text">1.熟练使用HTML/CSS、HTML5/CSS3进行PC端和移动端的开发，能够手写符合w3c标准的web页面，进行移动端响应式布局开发，能够兼容主流浏览器，并且100%还原设计图，以及能够对网站进行二次重构。</p>
+        <p class="sele-int-javascript">
+            2.熟练运用JavaScript编写Tab切换、拖拽、大图滚动等网站常见效果，注重代码优化,熟练运用JavaScript中的DOM操作熟练运用数据类型，不同数据类型之间的转换，数组和对象表达式的使用。
+            运用条件语句、循环语句的使用。运用JavaScript中的事件处理，事件绑定和事件监听。能够使用jQuery框架缩短开发时间。
+        </p>
+        <p class="sele-int-css3">3.熟悉HTML5新特性。可以利用CSS3的过渡、动画属性实现网页的动态效果 。熟练使用CSS3新属性，包括选择器、边框的圆角图片阴影、背景的定位渐变、文字的阴影、2D/3D转换等，熟悉过渡和动画实现动态效果。</p>
+    </div>
+    <!--end myself-->
+    <!--begin effect-->
+    <div class="preview-box">
+        <ul class="preview-list" id="pr-ul">
+            <li class="pre-html" style="height:200px;">
+                <a href="html.html">
+                    <div class="pre-opacity"></div>
+                    <div class="pre-html-back">  <p>点击链接html页面(包含页面项目以及页面练习)</p></div>
+                </a>
+            </li>
+            <li class="pre-javascript">
+                <a href="javascript.html">
+                     <div class="pre-opacity"></div>
+                     <div class="pre-javascript-back">
+                         <p>点击链接javascript页面(包含页面项目以及页面练习)</p>
+                     </div>
+                </a>
+            </li>
+            <li class="pre-css">
+                <a href="css3web/index.html">
+                     <div class="pre-opacity"></div>
+                     <div class="pre-css-back">
+                         <p>点击链接html5,css3页面(包含页面项目以及页面练习)</p>
+                     </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+     <!--end effect-->
+     <!--begin favourite-->
+     <div class="fa-contentbox">
+         <div class="fa-desc">
+             <h3 class="fa-title">Nothing for nothing.</h3>
+             <p class="fa-text">Action speak louder than words.Whatever is worth doing is worth doing well. </p>
+         </div>
+         <section class="fa-list clearfix">
+             <div>
+                <span class="fa-icon-h">
+                    <img src="img/heart-blue.png">
+                </span>
+                <h3>对Html/Css的学习</h3>
+                <p>不安逸，不浮躁。任何学习都不是一蹴而就的</p>
              </div>
-        </div>
+             <div>
+                 <span class="fa-icon-h">
+                    <img src="img/guru-blue.png">
+                </span>
+                <h3>对javascript的学习</h3>
+                <p>不安逸，不浮躁。任何学习都不是一蹴而就的</p>
+             </div>
+             <div>
+                 <span class="fa-icon-h">
+                    <img src="img/weight-blue.png">
+                </span>
+                <h3>对Html5/Css3的学习</h3>
+                <p>不安逸，不浮躁。任何学习都不是一蹴而就的</p>
+             </div>
+         </section>
+     </div>
+     <!--end favourite-->
+     <!--begin hobby-->
+    <div class="hobby-box">
+        <h3 class="hobby-title">自己的一些小爱好</h3>
+        <ul class="hobby-list">
+            <li>
+                <img src="img/psu.jpg">
+                <div>画一些小画</div>
+            </li>
+            <li>
+                <img src="img/maya.jpg">
+                <div>做一些小东西</div>
+            </li>
+            <li>
+                <img src="img/sport.jpg">
+                <div>有空去跑跑步</div>
+            </li>
+            <li>
+                <img src="img/book.jpg">
+                <div>没事看看书</div>
+            </li>
+        </ul>
     </div>
-    <!--头部 end-->
-    <!--main begin-->
-    <div class="main_box">
-        <div class="pro_bar">
-            <span></span>
-        </div>
-        <div class="skillbox clearFix" id="skillbox">
-            <div id="ski_lone" class="ski_lone"></div>
-            <div id="ski_ltwo" class="ski_ltwo"></div>
-            <div id="ski_rone" class="ski_rone"></div>
-            <div id="ski_rtwo" class="ski_rtwo"></div>
-        </div>
-    </div>
-    <!--main end-->
+     <!--end hobby-->
+     <!--begin footer-->
+     <footer class="footer-box clearfix">
+         <div class="footer-work">
+            <h3>期望工作:</h3>
+            <p>期望岗位:前端开发</p>
+            <p>期望薪资:8k-10k</p>
+            <p>期望工作地点:北京(地区不限)</p>
+         </div>
+         <div class="footer-contact">
+            <span class="foo-click"></span>
+            <h3>联系方式:</h3>
+            <p>Name:李亚飞</p>
+            <p>Tel:15932185538</p>
+            <p>Email:852801151@qq.com</p>
+         </div>
+         <strong> &copy;2016 Alanweb .Powered by Alan 非常愿意加入您的团队，把工作当成我的事业来做，一起进步、成长!</p>
+        </strong>
 </body>
 </html>

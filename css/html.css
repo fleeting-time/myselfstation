@@ -1,0 +1,77 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2016-04-23 14:09:26
+ * @version $Id$
+ */
+
+body,html{
+    height: 100%;
+    width: 100%;
+    background:#399;
+}
+.project-box{
+    width: 980px;
+    margin: 0 auto;
+    -background: #ccc;
+}
+
+.right-pr-box h3{
+    font-size: 30px;
+    color: #fff;
+}
+
+.right-pr-box li{
+    width:600px;
+    margin: 0 auto;
+    height: 300px;
+    background: #ccc;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.practice-box h3{
+     font-size: 30px;
+    color: #fff;
+}
+
+.practice-box li{
+    width:300px;
+    height: 300px;
+    float: left;
+    background: #ccc;
+    cursor: pointer;
+    margin:10px 13px;
+    position: relative;
+    overflow: hidden;
+}
+
+.practice-box li span{
+    width: 100%;
+    height: 80px;
+    background: rgba(0,0,0,0.4);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    -webkit-transform: translate(0,80px);
+    transition:0.5s all ease;
+}
+
+.practice-box li:hover span{
+    -webkit-transform: translate(0,0);
+}
+
+.practice-box li a{
+    width: 80px;
+    height:40px;
+    border: 1px solid #399;
+    position: absolute;
+    left: 10px; 
+    top:10px;
+    border-radius:10px;
+    font-size: 18px;
+    color: #fff;
+    text-align:center;
+    line-height: 40px;
+}

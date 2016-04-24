@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+*{ margin:0; padding:0;}
+div{ position:absolute;}
+.hover_box{ width:310px; height:310px; background:url(img/m1.jpg) no-repeat; left:100px; top:50px;}
+.show_box{ left:500px; top:50px; width:310px; height:310px; overflow:hidden; display:none;}
+.show_box img{ position:absolute; left:0; top:0;}
+.cur{ width:100px; height:100px; background:#F93; opacity:0.4; position:absolute; left:0; top:0; display:none;}
+</style>
+<script src="js/jquery-1.7.2.js"></script>
+<script>
+$(function(){
+	var oHover=$('#hover');
+	var oShow=$('#show');
+	var oCur=$('#cur');
+	var oImg=$('#img');
+	oHover.hover(function(){
+		oShow.show();
+		oCur.show();
+	},function(){
+		oShow.hide();
+		oCur.hide();
+	})
+	var maxWidth=oHover.width()-oCur.width();
+	var maxHeight=oHover.height()-oCur.height();
+	
+	oHover.mousemove(function(ev){
+		var left=ev.clientX-oHover.offset().left-oCur.width()/2;
+		var top=ev.clientY-oHover.offset().top-oCur.height()/2;
+		if(left<0)
+		{
+			left=0;
+		}
+		else if(left>maxWidth)
+		{
+			left=maxWidth;
+		}
+		
+		if(top<0)
+		{
+			top=0;
+		}
+		else if(top>maxHeight)
+		{
+			top=maxHeight;
+		}
+		oCur.css({
+			left:left+'px',
+			top:top+'px'
+		})
+		var nMaxLeft=oImg.width()-oShow.width();
+		var nMaxTop=oImg.height()-oShow.height();
+		
+		var imgLeft=left/maxWidth*nMaxLeft;
+		var imgTop=top/maxHeight*nMaxTop;
+		oImg.css({
+			left:-imgLeft+'px',
+			top:-imgTop+'px'
+		})
+	})
+})
+</script>
+</head>
+
+<body>
+	<div class="hover_box" id="hover">
+		<span class="cur" id="cur"></span>
+	</div>
+	<div class="show_box" id="show"><img  id="img"src="img/b1.jpg" /></div>
+</body>
+</html>

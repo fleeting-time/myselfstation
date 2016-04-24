@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+*{ margin:0; padding:0;}
+li{ width:150px; height:150px; margin:10px; float:left; list-style:none; position:relative;}
+img{ width:100%; height:100%;}
+ul{ border:1px solid #000; width:510px; height:510px; margin:50px auto; cursor:pointer;}
+span{ position:absolute; width:100%; height:100%; background:rgba(255,255,255,0.5); left:0; top:0; font-size:50px; text-align:center; line-height:150px; cursor:pointer;}
+.active{ border:2px dashed #000; width:146px; height:146px;}
+</style>
+<script src="js/move.index.js"></script>
+<script>
+window.onload=function(){
+	var aLi=document.getElementsByTagName('li');
+	var aImg=document.getElementsByTagName('img');
+	var aPos=[];
+	for(var i=0;i<aLi.length;i++)
+	{
+		var left=aLi[i].offsetLeft;
+		var top=aLi[i].offsetTop;
+		aLi[i].style.left=left+'px'
+		aLi[i].style.top=top+'px';
+		aPos.push({left:left,top:top})
+	}
+	
+	for(var i=0;i<aLi.length;i++)
+	{
+		//阻止图片默认事件
+		aImg[i].onmousedown=function(){
+			return false;
+		};
+		aLi[i].index=i;
+		aLi[i].style.position='absolute';
+		aLi[i].style.margin=0;
+		
+		mouseMove(aLi[i])
+	}
+	document.onclick=function(){
+		aPos.sort(function(){
+			return Math.random()-0.5;
+		})
+		
+		for(var i=0;i<aPos.length;i++)
+		{
+			move(aLi[i],aPos[i],{
+				easing:Tween.Bounce.easeOut,
+				duration:800
+			})
+		}
+	};
+	
+	var oNear=null;
+	var n=1;
+	function mouseMove(obj)
+	{
+		
+		obj.onmousedown=function(ev){
+			obj.style.zIndex=n++;
+			var oEvent=ev || event;
+			var disX=oEvent.clientX-obj.offsetLeft;
+			var disY=oEvent.clientY-obj.offsetTop;
+			
+			document.onmousemove=function(ev){
+				var oEvent=ev || event;
+				var left=oEvent.clientX-disX;
+				var top=oEvent.clientY-disY;
+				obj.style.left=left+'px';
+				obj.style.top=top+'px';
+				
+				oNear=findNear(obj)
+				
+				if(oNear)
+				{
+					
+					for(var i=0;i<aLi.length;i++)
+					{
+						aLi[i].className='';
+					}
+					
+					oNear.className='active'
+				}
+				else
+				{
+					for(var i=0;i<aLi.length;i++)
+					{
+						aLi[i].className='';
+					}
+				}
+				
+			
+			};
+			document.onmouseup=function(){
+				document.onmousemove=null;
+				document.onmouseup=null;
+				if(oNear)
+				{
+					move(obj,aPos[oNear.index],{
+						easing:Tween.Bounce.easeOut,
+						duration:500
+					})
+					move(oNear,aPos[obj.index],{
+						easing:Tween.Quart.easeOut,
+						duration:500
+					})
+					
+					var tmp=oNear.index;
+					oNear.index=obj.index;
+					obj.index=tmp;
+					
+					for(var i=0;i<aLi.length;i++)
+					{
+						aLi[i].className='';
+					}
+				}
+				else
+				{
+					move(obj,aPos[obj.index],{
+						easing:Tween.Bounce.easeOut,
+						duration:500
+					})
+				}
+				
+				
+			};
+			
+		};
+	}
+	
+	function toKiss(obj,obj2)
+	{
+		var t1=obj.offsetTop;
+		var b1=t1+obj.offsetHeight;
+		var l1=obj.offsetLeft;
+		var r1=l1+obj.offsetWidth;
+		
+		var t2=obj2.offsetTop;
+		var b2=t2+obj2.offsetHeight;
+		var l2=obj2.offsetLeft;
+		var r2=l2+obj2.offsetWidth;
+		
+		if(l2>r1 || t2>b1 || l1>r2 ||t1>b2)
+		{
+			return false;
+		}
+		else
+		{
+			return true;
+		}
+	}
+	
+	function findNear(obj)
+	{
+		var mIndis=99999;
+		var minIndex=-1;
+		
+		for(var i=0;i<aLi.length;i++)
+		{
+			if(obj !=aLi[i])
+			{
+				if(toKiss(obj,aLi[i]))
+				{
+					var dis=getDis(obj,aLi[i]);
+					if(dis<mIndis)
+					{
+						mIndis=dis;
+						minIndex=i;
+						
+					}
+				}
+			}
+		}
+		
+		if(minIndex==-1)
+		{
+			return false;
+		}
+		else
+		{
+			return aLi[minIndex];
+		}
+	}
+	
+	function getDis(obj1,obj2)
+	{
+		var a=obj2.offsetTop+obj2.offsetHeight/2-(obj1.offsetTop+obj1.offsetHeight/2);
+		var b=obj2.offsetLeft+obj2.offsetWidth/2-(obj1.offsetLeft+obj1.offsetWidth/2)
+		
+		return Math.sqrt(a*a+b*b)
+	}
+	
+	
+	function raD(n,m)
+	{
+		return Math.floor(Math.random()*(m-n)+n)
+	}
+	
+	
+};
+</script>
+</head>
+
+<body>
+<ul>
+	<li>
+		<img src="img/dball.jpg" />
+	</li>
+	<li>
+		<img src="img/intro-01.jpg" />
+	</li>
+	<li>
+		<img src="img/full_1.jpg" />
+	</li>
+	<li>
+		<img src="img/full_2.jpg" />
+	</li>
+	<li>
+		<img src="img/full_3.jpg" />
+	</li>
+	<li>
+		<img src="img/intro-02.jpg" />
+	</li>
+	<li>
+		<img src="img/intro-03.jpg" />
+	</li>
+	<li>
+		<img src="img/intro-04.jpg" />
+	</li>
+	<li>
+		<img src="img/sport.jpg" />
+	</li>
+</ul>
+</body>
+</html>

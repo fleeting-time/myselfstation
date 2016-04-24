@@ -4022,7 +4022,6 @@ var Sizzle = function( selector, context, results, seed ) {
 			}
 		}
 
-
 	} else {
 		// Take a shortcut and set the context if the root selector is an ID
 		// (but not if it'll be faster if the inner selector is an ID)
@@ -8685,7 +8684,6 @@ jQuery.fn.extend({
 				jQuery.dequeue( this, type );
 			}
 		});
-
 	}
 
 });
